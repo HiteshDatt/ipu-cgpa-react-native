@@ -130,6 +130,11 @@ const Calculator = () => {
         />
       </View>
       <View style={styles.tableContainer}>
+        <View style={styles.row}>
+          <Text style={styles.subjectNumberHeading}>Subject</Text>
+          <Text style={styles.inputBoxHeading}>Marks</Text>
+          <Text style={styles.inputBoxHeading}>Credits</Text>
+        </View>
         {[...Array(numberOfSubject)].map((item, index) => {
           return (
             <View key={index} style={styles.row}>
@@ -226,11 +231,14 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
   },
   subjectNumber: {
-    width: 50,
+    width: 90,
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
     borderRightWidth: 1,
+    borderLeftWidth: 1,
+    borderBottomWidth: 1,
+    backgroundColor: '#f2f2f2',
     padding: 10,
   },
   inputBox: {
@@ -240,6 +248,24 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: 'center',
     fontSize: 16,
+  },
+  inputBoxHeading: {
+    flex: 1,
+    borderWidth: 1,
+    padding: 10,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 16,
+    backgroundColor: '#f2f2f2',
+  },
+  subjectNumberHeading: {
+    width: 90,
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    borderWidth: 1,
+    padding: 10,
+    backgroundColor: '#f2f2f2',
   },
   inputBoxContainer: {
     flex: 1,
