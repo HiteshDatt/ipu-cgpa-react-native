@@ -1,9 +1,9 @@
-name: "Build Android app"
+name: "Build Android apk"
 
 on:
   push:
     branches:
-      - main
+      - main-random-branch
 
 jobs:
   build:
@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          # cache: 'yarn'
 
       - name: Run NPM Install
         run: |
@@ -39,11 +38,11 @@ jobs:
       - name: Build application
         run: |
              cd android
-             ./gradlew bundleRelease
+             ./gradlew assembleRelease
 
       - name: Upload application
         uses: actions/upload-artifact@v2
         with:
-          name: app
-          path: android/app/build/outputs/bundle/release/app-release.aab
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/app-release.apk
           retention-days: 3
