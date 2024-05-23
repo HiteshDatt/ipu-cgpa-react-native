@@ -3,7 +3,7 @@ name: "Build Android apk"
 on:
   push:
     branches:
-      - main
+      - main-random-branch
 
 jobs:
   build:
@@ -51,7 +51,7 @@ jobs:
           keyPassword: ${{ secrets.ANDROID_SIGNING_KEY_PASSWORD }}
 
       - name: Upload application
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: app-release-signed-apk
           path: ${{steps.sign_app.outputs.signedReleaseFile}}
