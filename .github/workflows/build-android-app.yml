@@ -32,6 +32,9 @@ jobs:
         run: |
              npm i -g corepack
              npm install
+      
+      - name: Make Gradlew Executable
+        run: cd android && chmod +x ./gradlew
 
       - name: Build application
         run: |
