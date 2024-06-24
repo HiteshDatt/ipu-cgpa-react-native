@@ -65,4 +65,3 @@ jobs:
           name: app-release-signed-apk
           path: ${{steps.sign_app.outputs.signedReleaseFile}}
           retention-days: 3
-          
